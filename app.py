@@ -73,11 +73,13 @@ if st.button('Show Recommendation'):
 if st.button("Buy on Lazada"):
     laz_query = selected_mouse
     query_laz = laz_url + laz_query 
-    st.markdown(f'<a href="{query_laz}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
-    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
+    webbrowser.open_new_tab(query_laz)
+##    st.markdown(f'<a href="{query_laz}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
+##    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
 
 if st.button("Buy on Shopee"):
     shp_query = selected_mouse
     query_shp = shp_url + shp_query 
-    st.markdown(f'<a href="{query_shp}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
-    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
+    webbrowser.open_new_tab(query_shp)
+##    st.markdown(f'<a href="{query_shp}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
+##    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
