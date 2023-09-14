@@ -5,12 +5,12 @@ import requests
 import webbrowser
 
 
+
 st.header('Mouse Recommender System Using Machine Learning')
 model = pickle.load(open('artifacts/mrmodel.pkl','rb'))
 mouse_names = pickle.load(open('artifacts/mouse_names.pkl','rb'))
 final_rating = pickle.load(open('artifacts/m_final_rating.pkl','rb'))
 mouse_pivot = pickle.load(open('artifacts/mouse_pivot.pkl','rb'))
-
 
 def fetch_poster(suggestion):
     mouse_name = []
