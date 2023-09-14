@@ -51,64 +51,36 @@ selected_mouse = st.selectbox(
 laz_url = "https://www.lazada.com.my/catalog/?q="
 shp_url = "https://shopee.com.my/search?keyword="
 
+laz1 = "laz l1"
+laz2 = "laz l2"
+laz3 = "laz l3"
+laz4 = "laz l4"
+laz5 = "laz l5"
+shp1 = "shp l1"
+shp2 = "shp l2"
+shp3 = "shp l3"
+shp4 = "shp l4"
+shp5 = "shp l5"
+
+
 if st.button('Show Recommendation'):
     recommended_mouse,poster_url = recommend_mouse(selected_mouse)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.text(recommended_mouse[1])
         st.image(poster_url[1])
-        if st.button("Lazada"):
-            rec1_query = recommended_mouse[1]
-            rec1_laz = laz_url + rec1_query 
-            webbrowser.open_new_tab(rec1_laz)
-        if st.button("Shopee"):
-            rec1_query = recommended_mouse[1]
-            rec1_shp = shp_url + rec1_query 
-            webbrowser.open_new_tab(rec1_shp)
     with col2:
         st.text(recommended_mouse[2])
         st.image(poster_url[2])
-        if st.button("Lazada"):
-            rec2_query = recommended_mouse[2]
-            rec2_laz = laz_url + rec2_query 
-            webbrowser.open_new_tab(rec2_laz)
-        if st.button("Shopee"):
-            rec2_query = recommended_mouse[2]
-            rec2_shp = shp_url + rec2_query 
-            webbrowser.open_new_tab(rec2_shp)
     with col3:
         st.text(recommended_mouse[3])
         st.image(poster_url[3])
-        if st.button("Lazada"):
-            rec3_query = recommended_mouse[3]
-            rec3_laz = laz_url + rec3_query 
-            webbrowser.open_new_tab(rec3_laz)
-        if st.button("Shopee"):
-            rec3_query = recommended_mouse[3]
-            rec3_shp = shp_url + rec3_query 
-            webbrowser.open_new_tab(rec3_shp)
     with col4:
         st.text(recommended_mouse[4])
         st.image(poster_url[4])
-        if st.button("Lazada"):
-            rec4_query = recommended_mouse[4]
-            rec4_laz = laz_url + rec4_query 
-            webbrowser.open_new_tab(rec4_laz)
-        if st.button("Shopee"):
-            rec4_query = recommended_mouse[4]
-            rec4_shp = shp_url + rec4_query 
-            webbrowser.open_new_tab(rec4_shp)
     with col5:
         st.text(recommended_mouse[5])
         st.image(poster_url[5])
-        if st.button("Lazada"):
-            rec5_query = recommended_mouse[5]
-            rec5_laz = laz_url + rec5_query 
-            webbrowser.open_new_tab(rec5_laz)
-        if st.button("Shopee"):
-            rec5_query = recommended_mouse[5]
-            rec5_shp = shp_url + rec5_query 
-            webbrowser.open_new_tab(rec5_shp)
 
 if st.button("Buy on Lazada"):
     laz_query = selected_mouse
