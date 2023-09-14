@@ -2,7 +2,6 @@ import pickle
 import streamlit as st
 import numpy as np
 import requests
-from bs4 import BeautifulSoup
 import webbrowser
 
 
@@ -52,37 +51,33 @@ selected_mouse = st.selectbox(
 laz_url = "https://www.lazada.com.my/catalog/?q="
 shp_url = "https://shopee.com.my/search?keyword="
 
-but1, but2, but3 = st.columns(3)
-with but1:
-    if st.button('Show Recommendation'):
-        recommended_mouse,poster_url = recommend_mouse(selected_mouse)
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col1:
-            st.text(recommended_mouse[1])
-            st.image(poster_url[1])
-        with col2:
-            st.text(recommended_mouse[2])
-            st.image(poster_url[2])
-        with col3:
-            st.text(recommended_mouse[3])
-            st.image(poster_url[3])
-        with col4:
-            st.text(recommended_mouse[4])
-            st.image(poster_url[4])
-        with col5:
-            st.text(recommended_mouse[5])
-            st.image(poster_url[5])
+if st.button('Show Recommendation'):
+    recommended_mouse,poster_url = recommend_mouse(selected_mouse)
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        st.text(recommended_mouse[1])
+        st.image(poster_url[1])
+    with col2:
+        st.text(recommended_mouse[2])
+        st.image(poster_url[2])
+    with col3:
+        st.text(recommended_mouse[3])
+        st.image(poster_url[3])
+    with col4:
+        st.text(recommended_mouse[4])
+        st.image(poster_url[4])
+    with col5:
+        st.text(recommended_mouse[5])
+        st.image(poster_url[5])
 
-with but2:
-    if st.button("Buy on Lazada"):
-        laz_query = selected_mouse
-        query_laz = laz_url + laz_query 
-        st.markdown(f'<a href="{query_laz}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
-        st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
+if st.button("Buy on Lazada"):
+    laz_query = selected_mouse
+    query_laz = laz_url + laz_query 
+    st.markdown(f'<a href="{query_laz}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
+    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
 
-with but3:
-    if st.button("Buy on Shopee"):
-        shp_query = selected_mouse
-        query_shp = shp_url + shp_query 
-        st.markdown(f'<a href="{query_shp}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
-        st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
+if st.button("Buy on Shopee"):
+    shp_query = selected_mouse
+    query_shp = shp_url + shp_query 
+    st.markdown(f'<a href="{query_shp}" target="_blank" id="link2" style="display: none;"></a>', unsafe_allow_html=True)
+    st.markdown('<script>document.getElementById("link2").click();</script>', unsafe_allow_html=True)
